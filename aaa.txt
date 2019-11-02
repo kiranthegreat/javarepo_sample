@@ -1,0 +1,400 @@
+public 
+
+import java.awt.*;
+import java.awt.event.*;
+
+
+javac Ex.java  -d .
+
+
+
+class A{
+
+
+}
+
+class B{
+
+
+}
+
+Ex.java
+
+javac Ex.java
+
+
+
+
+   Design a class Tour:
+
+tourid  int 
+place  string
+cost double
+tourdate   String
+
+1. add setter & getter methods
+2. add constructors : default & parameterized
+
+
+-----------------------
+
+Java Inheritence
+
+package inherit;
+
+public class A {
+	
+	public void show(){
+		System.out.println("I am A");
+	}
+
+}
+
+
+package inherit;
+
+public class B extends A {
+
+	  public void disp(){
+		  System.out.println("I am B");
+	  }
+}
+
+
+
+
+
+
+
+Handling constructor in inheritence
+-----------------------------------
+
+to call base class constructor :   super.constructor()
+
+
+
+class Emp {
+   String name;
+   int age;
+
+   public Emp() { this("Unknown",-1);}
+   public Emp ( String name , int age) {
+        this.name=name;  this.age=age; }
+
+ }
+
+Emp e = new Emp();
+
+Emp e = new Emp("Rama",12);
+
+==========================
+Design a class : Ticket
+String ticketId
+int price
+java.util.Date journeyDate
+String passengerName
+
+add setter & getter / constructors 
+override method equals() to check 2 tickets are same or not by checking:
+passenger name (insensitive)
+price 
+
+show ticket details by override toString() in following format:
+Name :  xyz
+Ticket Id: A0012
+Journey Date: 09-09-2020
+Price: 23000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Design a class Account :
+private String acno;
+private String name;
+private int balance
+
+add setter /getter  , constructors
+method:
+   public void deposit(int amount);
+   public void withdraw(int amount);
+
+
+Inherit Account to make : Savings & Current
+override methods in Current as withdraw :
+balance can not be less than 5000
+if occurs throws Exception with message : Insuffcient balance
+override methods in Savings as :
+balance can not be less than 1000
+if occurs throws Exception with message : Insuffcient balance
+
+Make objects of Savings & Current , test all methods.
+
+---------------------------
+
+
+
+Design a class Account as abstract :
+private String acno;
+private String name;
+private int balance
+
+add setter /getter  , constructors
+method:
+   public void deposit(int amount);
+   public abstract void withdraw(int amount);
+
+Inherit Account to make : Savings & Current
+override methods in Current as :
+balance can not be less than 5000
+if occurs throws Exception with message : Insuffcient balance
+override methods in Savings as :
+balance can not be less than 1000
+if occurs throws Exception with message : Insuffcient balance
+
+
+
+
+
+
+
+
+
+
+method :
+
+1.  concrete()   2.. abstract()
+
+first one is defined as well as declared
+second is only declared, never defined.
+
+if any anstract method present in a class, it must be defined as 
+abstract class.
+
+
+abstract public void show();
+public void show() {   }
+
+
+
+abstract class :
+the class which is declared with keyword-abstract
+this class can make reference but not make any object.
+this class has abstract method as well as concreate method also.
+
+abstract class can extend to make derived class but need to override
+abstract method(if any), otherwise compilation error or declare derived 
+class also as abstract
+
+abstract class Account {
+   public void deposit( int amt) {..... }
+   abstract public void withdraw ( int amt) ;
+}
+
+
+
+final :
+keyword used with
+1. class  2. variable  3. method
+
+final class X {  }
+
+class Y extends X { .... } // compilation error
+
+final class can not extend .
+java.lang.String  class
+
+
+final variable :
+
+final int n =12;
+n=n+3;  // compilation error
+
+final variable assigns only once the value.
+
+
+final method :
+method can not override.
+
+class A {
+     final void show() {  ...... }
+}
+class B extends A {
+     void show() {....} // compilation error
+}
+
+static :
+keyword assciated with:
+1. block   2. variable  3. method
+
+static block which happens before main() execution.
+
+static {
+...
+...
+}
+
+static variable/ member :
+class Emp {
+static int count;
+priavte String name;
+}
+
+Emp e1 = new Emp();   Emp e2 = new Emp(); Emp e3 = new Emp();
+
+static member makes a single copy for the whole class where as instance
+variables are to be created depends on object creations.
+
+
+
+class A {
+static int count;
+priavte String name;   
+
+public void show() {.... handle name and count  }
+static public void disp() { ... handle only count }
+
+}
+
+static method called by class or object
+non-static method called by object only
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+interface
+-----
+package inherit3;
+public interface Interface1 {
+   int data=12;
+   public void show();
+}
+
+package inherit3;
+public interface Interface2 extends Interface1 {
+   public void disp(int a);
+}
+
+
+package inherit3;
+public class MyClass implements Interface2 {
+
+@Override
+public void disp(int a) { System.out.println(a+data);  }
+
+@Override
+public void show() {  System.out.println("My Output");    }
+
+public static void main (String arg[]){
+	MyClass  myClass = new MyClass();
+	myClass.show();
+	myClass.disp(120); }
+}
+
+Marker interface :
+
+
+class Emp {
+
+
+}
+
+
+class Emp implements Serializable {
+
+
+}
+
+
+
+
+Emp a = new Emp();
+
+Emp b =a.clone();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
